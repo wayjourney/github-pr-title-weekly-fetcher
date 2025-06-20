@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitHub PR Title Weekly Fetcher</title>
+  <style>
+    body {
+      width: 480px;
+      margin: 0;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    .url-input {
+      width: 100%;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .url-input input {
+      flex: 1;
+      padding: 5px;
+    }
+    .url-input input[type="text"] {
+      padding: 5px;
+    }
+    .url-input button {
+      flex-shrink: 0;
+    }
+    .url-list {
+      margin-bottom: 10px;
+    }
+    .url-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .url-item input[type="text"] {
+      width: 200px;
+      margin-right: 5px;
+    }
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background-color: #f0f0f0;
+    }
+    #result {
+      white-space: pre-wrap;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .result-container {
+      margin-top: 10px;
+    }
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .copy-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+    .copy-button:hover {
+      background-color: #45a049;
+    }
+    .copy-button:disabled {
+      background-color: #cccccc;
+    }
+  </style>
+</head>
+<body>
+  <h2>GitHub PR Title Weekly Fetcher</h2>
+  
+  <div class="url-input">
+    <input type="text" id="url" placeholder="Closed PR (e.g., https://github.com/org/repo/pulls?q=is%3Apr+is%3Aclosed)">
+    <input type="text" id="title" placeholder="Title (e.g., C365)">
+    <button id="addUrl">Add URL</button>
+  </div>
+
+  <div class="url-list" id="urlList"></div>
+
+  <button id="fetch">Fetch PR Titles</button>
+  <button id="clear">Clear All</button>
+
+  <div class="result-container">
+    <div class="result-header">
+      <span>Results:</span>
+      <button id="copy" class="copy-button" disabled>Copy</button>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 
