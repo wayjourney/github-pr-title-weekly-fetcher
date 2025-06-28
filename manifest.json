@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "GitHub PR Title WeeklyFetcher",
-  "version": "1.0",
-  "description": "Fetch PR titles from GitHub repositories",
+  "version": "1.1",
+  "description": "Fetch PR titles and commit messages from GitHub repositories",
   "permissions": [
     "activeTab",
     "storage"

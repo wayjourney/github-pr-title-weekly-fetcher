@@ -77,6 +77,21 @@
     .copy-button:disabled {
       background-color: #cccccc;
     }
+    .options {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .options input[type="checkbox"] {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -88,7 +103,15 @@
     <button id="addUrl">Add URL</button>
   </div>
 
+  <div id="urlListTitle" style="font-weight:bold; margin-bottom:4px;">PR List:</div>
   <div class="url-list" id="urlList"></div>
+
+  <div class="options">
+    <label>
+      <input type="checkbox" id="includeCommits">
+      Include commit messages from PRs
+    </label>
+  </div>
 
   <button id="fetch">Fetch PR Titles</button>
   <button id="clear">Clear All</button>
